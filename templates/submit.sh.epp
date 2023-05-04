@@ -14,7 +14,8 @@
 #SBATCH --partition=<%= $slurm_partitions %>
 <% } %>
 
-<% if $export_vals == {} { %>
+<%# default behaviour if no additions are provided -%>
+<% if $additions == '' { %>
 unset XDG_RUNTIME_DIR
 
 # Disable variable export with sbatch
@@ -35,9 +36,8 @@ export PYTHONPATH=${PYTHONPATH}:"<%= $node_prefix %>/lib/usercustomize"
 export JUPYTER_PREFER_ENV_PATH=0
 <% } %>
 
-<% $export_vals.each |$key, $value| { %>
-export <%= $key -%>=<%=$value -%>
-<% } %>
+<%# write any additional script here -%>
+<%= $additions -%>
 
 {% if modules %}
 module load {{modules|join(' ')}}
