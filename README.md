@@ -244,3 +244,8 @@ jupyterhub::jupyter_notebook_config_hash:
 | `jupyterhub::oauthenticator::scope` | Array[String] | OIDC scope | |
 | `jupyterhub::oauthenticator::allowed_groups` | Array[String] | List of groups who should be allowed to connect. Empty list = any group | [] |
 | `jupyterhub::oauthenticator::claim_groups_key` | String | Userdata groups claim key from returned  OIDC json | 'affiliation' |
+
+### Other options
+| Variable | Type | Description | Default |
+| -------- | :----| :-----------| ------- |
+| `jupyterhub::submit::additions` | String | Script that should be added to submit.sh | |
