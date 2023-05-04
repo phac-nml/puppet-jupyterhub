@@ -248,7 +248,7 @@ jupyterhub::jupyter_notebook_config_hash:
 ### Submit addition option
 | Variable | Type | Description |
 | -------- | :----| :-----------|
-| `jupyterhub::submit::additions` | String | Script that should be added to submit.sh |
+| `jupyterhub::submit::additions` | String | bash command(s) that should be added to submit.sh |
 
 Adds the following by default:
 ```sh
