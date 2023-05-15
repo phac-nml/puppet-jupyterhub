@@ -12,7 +12,7 @@
 # @param jupyterhub_config_hash Custom hash merged to JupyterHub JSON main hash
 # @param slurm_partitions Name of the partitions for the ressource allocation of JupyterHub jobs
 # @param prometheus_token Token that Prometheus can use to scrape JupyterHub's metrics
-class jupyterhub (
+class nmljupyterhub (
   Stdlib::Absolutepath $prefix = '/opt/jupyterhub',
   Stdlib::Absolutepath $slurm_home = '/opt/software/slurm',
   String $bind_url = 'https://127.0.0.1:8000',
