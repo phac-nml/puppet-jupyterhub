@@ -13,7 +13,7 @@
 <% if $slurm_partitions != '' { %>
 #SBATCH --partition=<%= $slurm_partitions %>
 <% } else { -%>
-{% if partition != "" %}#SBATCH --partition={{partition}}{% endif %}
+{% if partition != [] %}#SBATCH --partition={{partition}}{% endif %}
 <% } %>
 
 <%# write any additional script here -%>
